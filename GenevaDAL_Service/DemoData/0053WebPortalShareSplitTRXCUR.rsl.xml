@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Document ReportRunId="20140604111553.0001989799997983-29866-10.0.0">
+    <Portfolio name="BC_MF_Test1">
+      <Header>
+        <__title xsi:nil="true" />
+        <__title>0053WebPortalShareSplitTRXCUR</__title>
+        <__title>BC_MF_Test1</__title>
+        <__title>BC_MF_Test1_Master</__title>
+        <__dateName>Period End Date</__dateName>
+        <__dateName>Knowledge Date</__dateName>
+        <__dateName>Accounting Calendar</__dateName>
+        <__date>2014-05-30T23:59:59</__date>
+        <__date>2014-06-04T11:15:52</__date>
+        <__date xsi:nil="true" />
+      </Header>
+<Data>	
+<QTY>249289903</QTY>
+<TRXTYP>Withdrawal</TRXTYP>
+<ENTDAT>02/04/2014</ENTDAT>
+<BASE_NET_CAS>-98743731</BASE_NET_CAS>
+<LCL_NET_CAS>-98743741</LCL_NET_CAS>
+<SETDAT>03/04/2014</SETDAT>
+<TRADE_DATE>03/04/2014</TRADE_DATE>
+<CLASS>NAMMCFClB</CLASS>
+
+</Data>	
+
+
+    </Portfolio>
+  </Document>
+</NewDataSet>

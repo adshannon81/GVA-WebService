@@ -1,0 +1,58 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Document ReportRunId="20140604111553.0001989799997983-29866-10.0.0">
+    <Portfolio name="BC_MF_Test1">
+      <Header>
+        <__title xsi:nil="true" />
+        <__title>0047WebPortalUnsettTrans30Extract</__title>
+        <__title>BC_MF_Test1</__title>
+        <__title>BC_MF_Test1_Master</__title>
+        <__dateName>Period End Date</__dateName>
+        <__dateName>Knowledge Date</__dateName>
+        <__dateName>Accounting Calendar</__dateName>
+        <__date>2014-05-30T23:59:59</__date>
+        <__date>2014-06-04T11:15:52</__date>
+        <__date xsi:nil="true" />
+      </Header>
+<Data>	
+
+<RCD_ID>N/A</RCD_ID>
+<ACCT_ID>DWMJF1</ACCT_ID>
+<ADJST_TMS>2013-07-01T11:41:36+01:00</ADJST_TMS>
+<ALT_CURR_CDE>JPY</ALT_CURR_CDE>
+<AS_OF_TMS>2013-06-28T23:59:59+01:00</AS_OF_TMS>
+<BK_ID>DAIW</BK_ID>
+<COVL_TYP>N/A</COVL_TYP>
+<DEAL_ID>10936</DEAL_ID>
+<FX_ALT_CMB_RTE>1</FX_ALT_CMB_RTE>
+<INC_PROJ_CMB_RTE>11</INC_PROJ_CMB_RTE>1
+<INSTR_ID>12572</INSTR_ID>
+<INQ_BASIS_NUM>30</INQ_BASIS_NUM>
+<ISS_RATE_TXT>DWMJF1Stdalne</ISS_RATE_TXT>
+<LDGR_NME>SUMITOMO METAL MINING JPY</LDGR_NME>
+<LOCAL_CURR_NME>Receivables</LOCAL_CURR_NME>
+<LONG_SHORT_IND>X</LONG_SHORT_IND>
+<LOT_TMS>2013-06-28T00:00:00+01:00</LOT_TMS>
+<NLS_CDE>E</NLS_CDE>
+<ORG_ID>DAIW</ORG_ID>
+<PRC_VALID_TYP>COM_12572</PRC_VALID_TYP>
+<PRIN_INC_IND>X</PRIN_INC_IND>
+<UGLCUR_ALT_CMB_AMT>0</UGLCUR_ALT_CMB_AMT>
+<FLD1_AMT>5348789</FLD1_AMT>
+<FLD1_TMS>2013-06-28T00:00:00+01:00</FLD1_TMS>
+<FLD2_TXT>DWMJF1Stdalne</FLD2_TXT>
+<VALVAL_CMB_AMT>5348789</VALVAL_CMB_AMT>
+<VALVAL_ALT_CMB_AMT>5348789</VALVAL_ALT_CMB_AMT>
+<STL_DTE>2013-07-01T00:00:00+01:00</STL_DTE>
+<SRC_SYS_ID>GENEVA</SRC_SYS_ID>
+<DEAL_NME></DEAL_NME>
+<FLD1_DESC>SELL LONG</FLD1_DESC>
+<FLD2_DESC>COMMON STOCKS</FLD2_DESC>
+
+
+</Data>	
+
+
+    </Portfolio>
+  </Document>
+</NewDataSet>

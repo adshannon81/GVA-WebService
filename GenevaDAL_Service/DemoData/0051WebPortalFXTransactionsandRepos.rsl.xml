@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Document ReportRunId="20140604111553.0001989799997983-29866-10.0.0">
+    <Portfolio name="BC_MF_Test1">
+      <Header>
+        <__title xsi:nil="true" />
+        <__title>0051WebPortalFXTransactionsandRepos</__title>
+        <__title>BC_MF_Test1</__title>
+        <__title>BC_MF_Test1_Master</__title>
+        <__dateName>Period End Date</__dateName>
+        <__dateName>Knowledge Date</__dateName>
+        <__dateName>Accounting Calendar</__dateName>
+        <__date>2014-05-30T23:59:59</__date>
+        <__date>2014-06-04T11:15:52</__date>
+        <__date xsi:nil="true" />
+      </Header>
+<Data>	
+<INSTR_ID>1004164</INSTR_ID>
+<ISS_NME>EUR per GBP @ 1.22 28/02/2014</ISS_NME>
+<ISS_DESC>EUR per GBP @ 1.22 28/02/2014</ISS_DESC>
+<DENOM_CURR_CDE>EUR </DENOM_CURR_CDE>
+<DESC_SRCE_TYP>GENEVA</DESC_SRCE_TYP>
+<INC_PROJ_CMB_RTE>NULL</INC_PROJ_CMB_RTE>
+<ISS_CL_NME></ISS_CL_NME>
+<ISS_TYP>FWD     </ISS_TYP>
+<ISS_TYP_NME>HEDGE FORWARD FX</ISS_TYP_NME>
+<ASSET_CLASS_MNEM>CURR EQUIV</ASSET_CLASS_MNEM>
+<ISS_UT_AMT>NULL</ISS_UT_AMT>
+<MAT_EXP_DTE>41698</MAT_EXP_DTE>
+<PREF_ID_CTXT_TYP>SEDOL           </PREF_ID_CTXT_TYP>
+<PREF_ISS_ID>EURfGBPf28022014</PREF_ISS_ID>
+<PRC_MLTPLR_RTE>NULL</PRC_MLTPLR_RTE>
+<UNDLY_ISS_ID>EUR</UNDLY_ISS_ID>
+<FLD1_TXT>FWD     </FLD1_TXT>
+<LST_CHG_TMS>39656.738275463</LST_CHG_TMS>
+<ACRL_BASIS_CDE>NULL</ACRL_BASIS_CDE>
+<ACRL_BASIS_NME>NULL</ACRL_BASIS_NME>
+<ISSUE_CLS3_NME></ISSUE_CLS3_NME>
+<ISSUE_LOC1_CDE>EU</ISSUE_LOC1_CDE>
+<ISSUE_LOC1_NME>European Union</ISSUE_LOC1_NME>
+<ISSUE_LOC2_CDE>EU</ISSUE_LOC2_CDE>
+<ORG_ID>DAIW</ORG_ID>
+<FLD20_IND>Y</FLD20_IND>
+
+</Data>	
+
+
+    </Portfolio>
+  </Document>
+</NewDataSet>

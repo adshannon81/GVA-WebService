@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Document ReportRunId="20140604111553.0001989799997983-29866-10.0.0">
+    <Portfolio name="BC_MF_Test1">
+      <Header>
+        <__title xsi:nil="true" />
+        <__title>0039WebPortalDividendLedger10Extract</__title>
+        <__title>BC_MF_Test1</__title>
+        <__title>BC_MF_Test1_Master</__title>
+        <__dateName>Period End Date</__dateName>
+        <__dateName>Knowledge Date</__dateName>
+        <__dateName>Accounting Calendar</__dateName>
+        <__date>2014-05-30T23:59:59</__date>
+        <__date>2014-06-04T11:15:52</__date>
+        <__date xsi:nil="true" />
+      </Header>
+      <Data>
+    <RCD_ID>N/A</RCD_ID>
+    <ACCT_ID>ODEYEUR</ACCT_ID>
+    <ACTG_TRN_EV_ID>DIVLED</ACTG_TRN_EV_ID>
+    <ACTG_TRN_ID>1412120000</ACTG_TRN_ID>
+    <BK_ID>DAIW</BK_ID>
+    <CNTRCT_PAY_TMS>2012-12-14T00:00:00+00:00</CNTRCT_PAY_TMS>
+    <EFF_POST_TMS>2012-12-14T00:00:00+00:00</EFF_POST_TMS>
+    <EV_CREATED_TMS>2012-12-18T11:59:13+00:00</EV_CREATED_TMS>
+    <INQ_BASIS_NUM>10</INQ_BASIS_NUM>
+    <INSTR_ID>104582</INSTR_ID>
+    <ISS_ID>AUD</ISS_ID>
+    <ORG_ID>DAIW</ORG_ID>
+    <QUANTITY>55587840.6</QUANTITY>
+    <TRD_EX_EFF_TMS>2012-12-14T00:00:00+00:00</TRD_EX_EFF_TMS>
+    <TRN_CDE>DIV</TRN_CDE>
+    <TRN_DESC>Dividend Receipt</TRN_DESC>
+    <FLD4_CMB_AMT>0</FLD4_CMB_AMT>
+    <FLD5_CMB_AMT>0</FLD5_CMB_AMT>
+    <FLD4_TMS>2012-12-14T00:00:00+00:00</FLD4_TMS>
+    <CLS_SET_ID>TRAN1</CLS_SET_ID>
+    <SRC_SYS_ID>GENEVA</SRC_SYS_ID>
+    <TAX_AMT>0</TAX_AMT>
+    <FLD3_TXT>L</FLD3_TXT>
+    <FLD7_TXT>FXCASH_104582</FLD7_TXT>
+    <FLD2_DESC>Updated</FLD2_DESC>
+    <FLD3_DESC>Dividend Ledger</FLD3_DESC>
+    <FLD6_AMT>0</FLD6_AMT>
+    <FLD7_AMT>-15824.53</FLD7_AMT>
+    <FLD11_AMT>-15824.53</FLD11_AMT>
+
+
+      </Data>
+    </Portfolio>
+  </Document>
+</NewDataSet>

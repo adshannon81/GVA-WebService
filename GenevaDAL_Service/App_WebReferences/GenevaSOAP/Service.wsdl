@@ -1,0 +1,1383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WSDL:definitions xmlns:nsg="http://geneva.advent.com" xmlns:tns="http://localhost:80/Service.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="Service" targetNamespace="http://localhost:80/Service.wsdl" xmlns:WSDL="http://schemas.xmlsoap.org/wsdl/">
+  <WSDL:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://geneva.advent.com">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="runrepResultsVectorElement">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="name" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="value" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="runrepResultsRecordStruct">
+        <xsd:sequence maxOccurs="unbounded">
+          <xsd:element minOccurs="0" maxOccurs="1" name="field" type="nsg:runrepResultsVectorElement" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="runrepResultsStruct">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="portfolioName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="record" type="nsg:runrepResultsRecordStruct" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="runrepResultsPortfolioStruct">
+        <xsd:sequence maxOccurs="unbounded">
+          <xsd:element minOccurs="0" maxOccurs="1" name="results" type="nsg:runrepResultsStruct" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="reportResultsVectorElement">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="name" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="value" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="reportResultsRecordStruct">
+        <xsd:sequence maxOccurs="unbounded">
+          <xsd:element minOccurs="0" maxOccurs="1" name="field" type="nsg:reportResultsVectorElement" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="reportResultsStruct">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="portfolioName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="header" type="nsg:reportResultsRecordStruct" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="record" type="nsg:reportResultsRecordStruct" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="reportParameterSet" type="nsg:reportResultsRecordStruct" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="addendumErrors" type="nsg:reportResultsRecordStruct" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="reportResultsPortfolioStruct">
+        <xsd:sequence maxOccurs="unbounded">
+          <xsd:element minOccurs="0" maxOccurs="1" name="results" type="nsg:reportResultsStruct" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="loaderResultsVectorElement">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="status" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="recordNumber" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="keyValue" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="externalId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="code" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="message" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="loaderResultsStruct">
+        <xsd:sequence maxOccurs="unbounded">
+          <xsd:element minOccurs="0" maxOccurs="1" name="results" type="nsg:loaderResultsVectorElement" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="runrepListResultsVectorElement">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="reportName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="fileName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="width" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="runrepListResultsStruct">
+        <xsd:sequence maxOccurs="unbounded">
+          <xsd:element minOccurs="0" maxOccurs="1" name="results" type="nsg:runrepListResultsVectorElement" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="runrepArgumentsResultsVectorElement">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="argumentName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="argumentType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="argumentDefault" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="runrepArgumentsResultsStruct">
+        <xsd:sequence maxOccurs="unbounded">
+          <xsd:element minOccurs="0" maxOccurs="1" name="results" type="nsg:runrepArgumentsResultsVectorElement" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="submissionTypes" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="stringVectorResultsStruct">
+        <xsd:sequence maxOccurs="unbounded">
+          <xsd:element minOccurs="0" maxOccurs="1" name="results" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="queryArgsVectorResultsStruct">
+        <xsd:sequence maxOccurs="unbounded">
+          <xsd:element minOccurs="0" maxOccurs="1" name="args" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="resultSet" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="stringData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="data" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="stringArrayStruct">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="vecptr" type="nsg:stringData" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="vecsize" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="stringArray">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="return" type="nsg:stringArrayStruct" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="MonitorShutdown">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="MonitorShutdownResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="status" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ShutdownCallableSession">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="sessionId" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ShutdownCallableSessionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="status" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="StartCallableLoader">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="portNumber" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="hostname" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="username" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="password" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="StartCallableLoaderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="loaderSessionId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="StartPersistentCallableLoader">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="portNumber" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="hostname" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="username" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="password" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="StartPersistentCallableLoaderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="loaderSessionId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableLoader">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="loaderSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="loaderRecords" nillable="true" type="xsd:anyType" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="extraFlags" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="loaderResults">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="return" type="nsg:loaderResultsStruct" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableLoaderConvertFile">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="loaderSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="loaderRecords" nillable="true" type="xsd:anyType" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="extraFlags" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableLoaderConvertFileResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="info" type="xsd:anyType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableLoaderSetFirm">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="loaderSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="loaderFirmName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableLoaderSetFirmResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="status" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="StartCallableRunrep">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="portNumber" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="hostname" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="username" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="password" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="extraFlags" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="StartCallableRunrepResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="runrepSessionId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="StartPersistentCallableRunrep">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="portNumber" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="hostname" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="username" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="password" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="extraFlags" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="StartPersistentCallableRunrepResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="runrepSessionId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepReadFile">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="readFile" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepReadFileResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="status" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepRunReport">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepFileName" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="extraFlags" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="reportResults">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="return" type="nsg:reportResultsPortfolioStruct" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepRunQuery">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepFileName" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="extraFlags" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="runrepQueryResults">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="return" type="nsg:runrepResultsPortfolioStruct" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepRunSelect">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="selectStatement" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="extraFlags" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="runrepSelectResults">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="return" type="nsg:runrepResultsPortfolioStruct" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepRunReportFormattedWithPath">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepFileName" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepFormat" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepExtension" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="extraFlags" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepRunReportFormattedWithPathResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="fileName" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepRunReportFormatted">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepFileName" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepFormat" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepExtension" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="extraFlags" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepRunReportFormattedResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="fileName" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepRunReportString">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepFileName" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="extraFlags" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepRunReportStringResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="runrepResults" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepRunQueryString">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepFileName" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="extraFlags" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepRunQueryStringResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="runrepResults" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepRunSelectString">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="selectStatement" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="extraFlags" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepRunSelectStringResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="runrepResults" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepRunGSQLString">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="queryText" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="extraFlags" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepRunGSQLStringResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="runrepResults" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepDescribeClassString">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepClassName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepDescribeClassStringResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="runrepResults" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepSetFirm">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepFirmName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepSetFirmResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="runrepResults" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepReportArguments">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepReportName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="runrepArgumentsResults">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="return" type="nsg:runrepArgumentsResultsStruct" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepReportList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepSessionId" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="runrepListResults">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="return" type="nsg:runrepListResultsStruct" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepQueryList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepSessionId" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="stringVectorResults">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="return" type="nsg:stringVectorResultsStruct" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepQueryArguments">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepQueryName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryArgsVectorResults">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="return" type="nsg:queryArgsVectorResultsStruct" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableRunrepDescribeClass">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="runrepClassName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="stringVectorDescribeResults">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="return" type="nsg:stringVectorResultsStruct" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="StartCallableServMgr">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="portNumber" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="hostname" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="username" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="password" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="StartCallableServMgrResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="servMgrSessionId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="StartPersistentCallableServMgr">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="portNumber" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="hostname" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="username" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="password" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="StartPersistentCallableServMgrResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="servMgrSessionId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableServMgrOpenList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="servMgrSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="className" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="sortKey" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableServMgrOpenListResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="listKey" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableServMgrRefreshList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="servMgrSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="listKey" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="className" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="sortKey" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableServMgrRefreshListResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="newListKey" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableServMgrFindInList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="servMgrSessionId" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="listKey" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="className" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="sortKey" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="startString" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RunCallableServMgrFindInListResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="nearestIndex" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </WSDL:types>
+  <WSDL:message name="MonitorShutdownRequest">
+    <WSDL:part name="parameters" element="nsg:MonitorShutdown" />
+  </WSDL:message>
+  <WSDL:message name="MonitorShutdownResponse">
+    <WSDL:part name="parameters" element="nsg:MonitorShutdownResponse" />
+  </WSDL:message>
+  <WSDL:message name="ShutdownCallableSessionRequest">
+    <WSDL:part name="parameters" element="nsg:ShutdownCallableSession" />
+  </WSDL:message>
+  <WSDL:message name="ShutdownCallableSessionResponse">
+    <WSDL:part name="parameters" element="nsg:ShutdownCallableSessionResponse" />
+  </WSDL:message>
+  <WSDL:message name="StartCallableLoaderRequest">
+    <WSDL:part name="parameters" element="nsg:StartCallableLoader" />
+  </WSDL:message>
+  <WSDL:message name="StartCallableLoaderResponse">
+    <WSDL:part name="parameters" element="nsg:StartCallableLoaderResponse" />
+  </WSDL:message>
+  <WSDL:message name="StartPersistentCallableLoaderRequest">
+    <WSDL:part name="parameters" element="nsg:StartPersistentCallableLoader" />
+  </WSDL:message>
+  <WSDL:message name="StartPersistentCallableLoaderResponse">
+    <WSDL:part name="parameters" element="nsg:StartPersistentCallableLoaderResponse" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableLoaderRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableLoader" />
+  </WSDL:message>
+  <WSDL:message name="loaderResults">
+    <WSDL:part name="parameters" element="nsg:loaderResults" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableLoaderConvertFileRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableLoaderConvertFile" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableLoaderConvertFileResponse">
+    <WSDL:part name="parameters" element="nsg:RunCallableLoaderConvertFileResponse" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableLoaderSetFirmRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableLoaderSetFirm" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableLoaderSetFirmResponse">
+    <WSDL:part name="parameters" element="nsg:RunCallableLoaderSetFirmResponse" />
+  </WSDL:message>
+  <WSDL:message name="StartCallableRunrepRequest">
+    <WSDL:part name="parameters" element="nsg:StartCallableRunrep" />
+  </WSDL:message>
+  <WSDL:message name="StartCallableRunrepResponse">
+    <WSDL:part name="parameters" element="nsg:StartCallableRunrepResponse" />
+  </WSDL:message>
+  <WSDL:message name="StartPersistentCallableRunrepRequest">
+    <WSDL:part name="parameters" element="nsg:StartPersistentCallableRunrep" />
+  </WSDL:message>
+  <WSDL:message name="StartPersistentCallableRunrepResponse">
+    <WSDL:part name="parameters" element="nsg:StartPersistentCallableRunrepResponse" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepReadFileRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepReadFile" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepReadFileResponse">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepReadFileResponse" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunReportRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepRunReport" />
+  </WSDL:message>
+  <WSDL:message name="reportResults">
+    <WSDL:part name="parameters" element="nsg:reportResults" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunQueryRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepRunQuery" />
+  </WSDL:message>
+  <WSDL:message name="runrepQueryResults">
+    <WSDL:part name="parameters" element="nsg:runrepQueryResults" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunSelectRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepRunSelect" />
+  </WSDL:message>
+  <WSDL:message name="runrepSelectResults">
+    <WSDL:part name="parameters" element="nsg:runrepSelectResults" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunReportFormattedWithPathRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepRunReportFormattedWithPath" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunReportFormattedWithPathResponse">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepRunReportFormattedWithPathResponse" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunReportFormattedRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepRunReportFormatted" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunReportFormattedResponse">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepRunReportFormattedResponse" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunReportLiteralRequest">
+    <WSDL:part name="runrepSessionId" type="xsd:string" />
+    <WSDL:part name="runrepFileName" type="xsd:string" />
+    <WSDL:part name="extraFlags" type="xsd:string" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunReportLiteralResponse">
+    <WSDL:part name="parameters" type="xsd:anyType" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunQueryLiteralRequest">
+    <WSDL:part name="runrepSessionId" type="xsd:string" />
+    <WSDL:part name="runrepFileName" type="xsd:string" />
+    <WSDL:part name="extraFlags" type="xsd:string" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunQueryLiteralResponse">
+    <WSDL:part name="parameters" type="xsd:anyType" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunSelectLiteralRequest">
+    <WSDL:part name="runrepSessionId" type="xsd:string" />
+    <WSDL:part name="selectStatement" type="xsd:string" />
+    <WSDL:part name="extraFlags" type="xsd:string" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunSelectLiteralResponse">
+    <WSDL:part name="parameters" type="xsd:anyType" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunGSQLLiteralRequest">
+    <WSDL:part name="runrepSessionId" type="xsd:string" />
+    <WSDL:part name="queryText" type="xsd:string" />
+    <WSDL:part name="extraFlags" type="xsd:string" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunGSQLLiteralResponse">
+    <WSDL:part name="parameters" type="xsd:anyType" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepDescribeClassLiteralRequest">
+    <WSDL:part name="runrepSessionId" type="xsd:string" />
+    <WSDL:part name="runrepClassName" type="xsd:string" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepDescribeClassLiteralResponse">
+    <WSDL:part name="parameters" type="xsd:anyType" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunReportStringRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepRunReportString" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunReportStringResponse">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepRunReportStringResponse" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunQueryStringRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepRunQueryString" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunQueryStringResponse">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepRunQueryStringResponse" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunSelectStringRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepRunSelectString" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunSelectStringResponse">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepRunSelectStringResponse" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunGSQLStringRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepRunGSQLString" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepRunGSQLStringResponse">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepRunGSQLStringResponse" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepDescribeClassStringRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepDescribeClassString" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepDescribeClassStringResponse">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepDescribeClassStringResponse" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepSetFirmRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepSetFirm" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepSetFirmResponse">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepSetFirmResponse" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepReportArgumentsRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepReportArguments" />
+  </WSDL:message>
+  <WSDL:message name="runrepArgumentsResults">
+    <WSDL:part name="parameters" element="nsg:runrepArgumentsResults" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepReportListRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepReportList" />
+  </WSDL:message>
+  <WSDL:message name="runrepListResults">
+    <WSDL:part name="parameters" element="nsg:runrepListResults" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepQueryListRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepQueryList" />
+  </WSDL:message>
+  <WSDL:message name="stringVectorResults">
+    <WSDL:part name="parameters" element="nsg:stringVectorResults" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepQueryArgumentsRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepQueryArguments" />
+  </WSDL:message>
+  <WSDL:message name="queryArgsVectorResults">
+    <WSDL:part name="parameters" element="nsg:queryArgsVectorResults" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableRunrepDescribeClassRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableRunrepDescribeClass" />
+  </WSDL:message>
+  <WSDL:message name="stringVectorDescribeResults">
+    <WSDL:part name="parameters" element="nsg:stringVectorDescribeResults" />
+  </WSDL:message>
+  <WSDL:message name="StartCallableServMgrRequest">
+    <WSDL:part name="parameters" element="nsg:StartCallableServMgr" />
+  </WSDL:message>
+  <WSDL:message name="StartCallableServMgrResponse">
+    <WSDL:part name="parameters" element="nsg:StartCallableServMgrResponse" />
+  </WSDL:message>
+  <WSDL:message name="StartPersistentCallableServMgrRequest">
+    <WSDL:part name="parameters" element="nsg:StartPersistentCallableServMgr" />
+  </WSDL:message>
+  <WSDL:message name="StartPersistentCallableServMgrResponse">
+    <WSDL:part name="parameters" element="nsg:StartPersistentCallableServMgrResponse" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableServMgrOpenListRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableServMgrOpenList" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableServMgrOpenListResponse">
+    <WSDL:part name="parameters" element="nsg:RunCallableServMgrOpenListResponse" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableServMgrRefreshListRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableServMgrRefreshList" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableServMgrRefreshListResponse">
+    <WSDL:part name="parameters" element="nsg:RunCallableServMgrRefreshListResponse" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableServMgrFindInListRequest">
+    <WSDL:part name="parameters" element="nsg:RunCallableServMgrFindInList" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableServMgrFindInListResponse">
+    <WSDL:part name="parameters" element="nsg:RunCallableServMgrFindInListResponse" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableServMgrGetChunkRequest">
+    <WSDL:part name="servmgrSessionId" type="xsd:string" />
+    <WSDL:part name="listKey" type="xsd:string" />
+    <WSDL:part name="className" type="xsd:string" />
+    <WSDL:part name="sortKey" type="xsd:string" />
+    <WSDL:part name="max" type="xsd:int" />
+    <WSDL:part name="startIndex" type="xsd:int" />
+    <WSDL:part name="elements" type="xsd:string" />
+    <WSDL:part name="constraints" type="xsd:string" />
+  </WSDL:message>
+  <WSDL:message name="RunCallableServMgrGetChunkResponse">
+    <WSDL:part name="parameters" type="xsd:anyType" />
+  </WSDL:message>
+  <WSDL:portType name="ServicePortType">
+    <WSDL:operation name="MonitorShutdown">
+      <documentation>Service definition of function nsg__MonitorShutdown</documentation>
+      <WSDL:input message="tns:MonitorShutdownRequest" />
+      <WSDL:output message="tns:MonitorShutdownResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="ShutdownCallableSession">
+      <documentation>Service definition of function nsg__ShutdownCallableSession</documentation>
+      <WSDL:input message="tns:ShutdownCallableSessionRequest" />
+      <WSDL:output message="tns:ShutdownCallableSessionResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="StartCallableLoader">
+      <documentation>Service definition of function nsg__StartCallableLoader</documentation>
+      <WSDL:input message="tns:StartCallableLoaderRequest" />
+      <WSDL:output message="tns:StartCallableLoaderResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="StartPersistentCallableLoader">
+      <documentation>Service definition of function nsg__StartPersistentCallableLoader</documentation>
+      <WSDL:input message="tns:StartPersistentCallableLoaderRequest" />
+      <WSDL:output message="tns:StartPersistentCallableLoaderResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableLoader">
+      <documentation>Service definition of function nsg__RunCallableLoader</documentation>
+      <WSDL:input message="tns:RunCallableLoaderRequest" />
+      <WSDL:output message="tns:loaderResults" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableLoaderConvertFile">
+      <documentation>Service definition of function nsg__RunCallableLoaderConvertFile</documentation>
+      <WSDL:input message="tns:RunCallableLoaderConvertFileRequest" />
+      <WSDL:output message="tns:RunCallableLoaderConvertFileResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableLoaderSetFirm">
+      <documentation>Service definition of function nsg__RunCallableLoaderSetFirm</documentation>
+      <WSDL:input message="tns:RunCallableLoaderSetFirmRequest" />
+      <WSDL:output message="tns:RunCallableLoaderSetFirmResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="StartCallableRunrep">
+      <documentation>Service definition of function nsg__StartCallableRunrep</documentation>
+      <WSDL:input message="tns:StartCallableRunrepRequest" />
+      <WSDL:output message="tns:StartCallableRunrepResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="StartPersistentCallableRunrep">
+      <documentation>Service definition of function nsg__StartPersistentCallableRunrep</documentation>
+      <WSDL:input message="tns:StartPersistentCallableRunrepRequest" />
+      <WSDL:output message="tns:StartPersistentCallableRunrepResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepReadFile">
+      <documentation>Service definition of function nsg__RunCallableRunrepReadFile</documentation>
+      <WSDL:input message="tns:RunCallableRunrepReadFileRequest" />
+      <WSDL:output message="tns:RunCallableRunrepReadFileResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunReport">
+      <documentation>Service definition of function nsg__RunCallableRunrepRunReport</documentation>
+      <WSDL:input message="tns:RunCallableRunrepRunReportRequest" />
+      <WSDL:output message="tns:reportResults" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunQuery">
+      <documentation>Service definition of function nsg__RunCallableRunrepRunQuery</documentation>
+      <WSDL:input message="tns:RunCallableRunrepRunQueryRequest" />
+      <WSDL:output message="tns:runrepQueryResults" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunSelect">
+      <documentation>Service definition of function nsg__RunCallableRunrepRunSelect</documentation>
+      <WSDL:input message="tns:RunCallableRunrepRunSelectRequest" />
+      <WSDL:output message="tns:runrepSelectResults" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunReportFormattedWithPath">
+      <documentation>Service definition of function nsg__RunCallableRunrepRunReportFormattedWithPath</documentation>
+      <WSDL:input message="tns:RunCallableRunrepRunReportFormattedWithPathRequest" />
+      <WSDL:output message="tns:RunCallableRunrepRunReportFormattedWithPathResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunReportFormatted">
+      <documentation>Service definition of function nsg__RunCallableRunrepRunReportFormatted</documentation>
+      <WSDL:input message="tns:RunCallableRunrepRunReportFormattedRequest" />
+      <WSDL:output message="tns:RunCallableRunrepRunReportFormattedResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunReportLiteral">
+      <documentation>Service definition of function nsg__RunCallableRunrepRunReportLiteral</documentation>
+      <WSDL:input message="tns:RunCallableRunrepRunReportLiteralRequest" />
+      <WSDL:output message="tns:RunCallableRunrepRunReportLiteralResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunQueryLiteral">
+      <documentation>Service definition of function nsg__RunCallableRunrepRunQueryLiteral</documentation>
+      <WSDL:input message="tns:RunCallableRunrepRunQueryLiteralRequest" />
+      <WSDL:output message="tns:RunCallableRunrepRunQueryLiteralResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunSelectLiteral">
+      <documentation>Service definition of function nsg__RunCallableRunrepRunSelectLiteral</documentation>
+      <WSDL:input message="tns:RunCallableRunrepRunSelectLiteralRequest" />
+      <WSDL:output message="tns:RunCallableRunrepRunSelectLiteralResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunGSQLLiteral">
+      <documentation>Service definition of function nsg__RunCallableRunrepRunGSQLLiteral</documentation>
+      <WSDL:input message="tns:RunCallableRunrepRunGSQLLiteralRequest" />
+      <WSDL:output message="tns:RunCallableRunrepRunGSQLLiteralResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepDescribeClassLiteral">
+      <documentation>Service definition of function nsg__RunCallableRunrepDescribeClassLiteral</documentation>
+      <WSDL:input message="tns:RunCallableRunrepDescribeClassLiteralRequest" />
+      <WSDL:output message="tns:RunCallableRunrepDescribeClassLiteralResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunReportString">
+      <documentation>Service definition of function nsg__RunCallableRunrepRunReportString</documentation>
+      <WSDL:input message="tns:RunCallableRunrepRunReportStringRequest" />
+      <WSDL:output message="tns:RunCallableRunrepRunReportStringResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunQueryString">
+      <documentation>Service definition of function nsg__RunCallableRunrepRunQueryString</documentation>
+      <WSDL:input message="tns:RunCallableRunrepRunQueryStringRequest" />
+      <WSDL:output message="tns:RunCallableRunrepRunQueryStringResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunSelectString">
+      <documentation>Service definition of function nsg__RunCallableRunrepRunSelectString</documentation>
+      <WSDL:input message="tns:RunCallableRunrepRunSelectStringRequest" />
+      <WSDL:output message="tns:RunCallableRunrepRunSelectStringResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunGSQLString">
+      <documentation>Service definition of function nsg__RunCallableRunrepRunGSQLString</documentation>
+      <WSDL:input message="tns:RunCallableRunrepRunGSQLStringRequest" />
+      <WSDL:output message="tns:RunCallableRunrepRunGSQLStringResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepDescribeClassString">
+      <documentation>Service definition of function nsg__RunCallableRunrepDescribeClassString</documentation>
+      <WSDL:input message="tns:RunCallableRunrepDescribeClassStringRequest" />
+      <WSDL:output message="tns:RunCallableRunrepDescribeClassStringResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepSetFirm">
+      <documentation>Service definition of function nsg__RunCallableRunrepSetFirm</documentation>
+      <WSDL:input message="tns:RunCallableRunrepSetFirmRequest" />
+      <WSDL:output message="tns:RunCallableRunrepSetFirmResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepReportArguments">
+      <documentation>Service definition of function nsg__RunCallableRunrepReportArguments</documentation>
+      <WSDL:input message="tns:RunCallableRunrepReportArgumentsRequest" />
+      <WSDL:output message="tns:runrepArgumentsResults" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepReportList">
+      <documentation>Service definition of function nsg__RunCallableRunrepReportList</documentation>
+      <WSDL:input message="tns:RunCallableRunrepReportListRequest" />
+      <WSDL:output message="tns:runrepListResults" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepQueryList">
+      <documentation>Service definition of function nsg__RunCallableRunrepQueryList</documentation>
+      <WSDL:input message="tns:RunCallableRunrepQueryListRequest" />
+      <WSDL:output message="tns:stringVectorResults" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepQueryArguments">
+      <documentation>Service definition of function nsg__RunCallableRunrepQueryArguments</documentation>
+      <WSDL:input message="tns:RunCallableRunrepQueryArgumentsRequest" />
+      <WSDL:output message="tns:queryArgsVectorResults" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepDescribeClass">
+      <documentation>Service definition of function nsg__RunCallableRunrepDescribeClass</documentation>
+      <WSDL:input message="tns:RunCallableRunrepDescribeClassRequest" />
+      <WSDL:output message="tns:stringVectorDescribeResults" />
+    </WSDL:operation>
+    <WSDL:operation name="StartCallableServMgr">
+      <documentation>Service definition of function nsg__StartCallableServMgr</documentation>
+      <WSDL:input message="tns:StartCallableServMgrRequest" />
+      <WSDL:output message="tns:StartCallableServMgrResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="StartPersistentCallableServMgr">
+      <documentation>Service definition of function nsg__StartPersistentCallableServMgr</documentation>
+      <WSDL:input message="tns:StartPersistentCallableServMgrRequest" />
+      <WSDL:output message="tns:StartPersistentCallableServMgrResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableServMgrOpenList">
+      <documentation>Service definition of function nsg__RunCallableServMgrOpenList</documentation>
+      <WSDL:input message="tns:RunCallableServMgrOpenListRequest" />
+      <WSDL:output message="tns:RunCallableServMgrOpenListResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableServMgrRefreshList">
+      <documentation>Service definition of function nsg__RunCallableServMgrRefreshList</documentation>
+      <WSDL:input message="tns:RunCallableServMgrRefreshListRequest" />
+      <WSDL:output message="tns:RunCallableServMgrRefreshListResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableServMgrFindInList">
+      <documentation>Service definition of function nsg__RunCallableServMgrFindInList</documentation>
+      <WSDL:input message="tns:RunCallableServMgrFindInListRequest" />
+      <WSDL:output message="tns:RunCallableServMgrFindInListResponse" />
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableServMgrGetChunk">
+      <documentation>Service definition of function nsg__RunCallableServMgrGetChunk</documentation>
+      <WSDL:input message="tns:RunCallableServMgrGetChunkRequest" />
+      <WSDL:output message="tns:RunCallableServMgrGetChunkResponse" />
+    </WSDL:operation>
+  </WSDL:portType>
+  <WSDL:binding name="Service" type="tns:ServicePortType">
+    <SOAP:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <WSDL:operation name="MonitorShutdown">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="ShutdownCallableSession">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="StartCallableLoader">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="StartPersistentCallableLoader">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableLoader">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableLoaderConvertFile">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableLoaderSetFirm">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="StartCallableRunrep">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="StartPersistentCallableRunrep">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepReadFile">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunReport">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunQuery">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunSelect">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunReportFormattedWithPath">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunReportFormatted">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunReportLiteral">
+      <SOAP:operation soapAction="" style="rpc" />
+      <WSDL:input>
+        <SOAP:body use="encoded" namespace="http://geneva.advent.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" namespace="http://geneva.advent.com" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunQueryLiteral">
+      <SOAP:operation soapAction="" style="rpc" />
+      <WSDL:input>
+        <SOAP:body use="encoded" namespace="http://geneva.advent.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" namespace="http://geneva.advent.com" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunSelectLiteral">
+      <SOAP:operation soapAction="" style="rpc" />
+      <WSDL:input>
+        <SOAP:body use="encoded" namespace="http://geneva.advent.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" namespace="http://geneva.advent.com" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunGSQLLiteral">
+      <SOAP:operation soapAction="" style="rpc" />
+      <WSDL:input>
+        <SOAP:body use="encoded" namespace="http://geneva.advent.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" namespace="http://geneva.advent.com" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepDescribeClassLiteral">
+      <SOAP:operation soapAction="" style="rpc" />
+      <WSDL:input>
+        <SOAP:body use="encoded" namespace="http://geneva.advent.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" namespace="http://geneva.advent.com" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunReportString">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunQueryString">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunSelectString">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepRunGSQLString">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepDescribeClassString">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepSetFirm">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepReportArguments">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepReportList">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepQueryList">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepQueryArguments">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableRunrepDescribeClass">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="StartCallableServMgr">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="StartPersistentCallableServMgr">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableServMgrOpenList">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableServMgrRefreshList">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableServMgrFindInList">
+      <SOAP:operation soapAction="" style="document" />
+      <WSDL:input>
+        <SOAP:body use="literal" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" />
+      </WSDL:output>
+    </WSDL:operation>
+    <WSDL:operation name="RunCallableServMgrGetChunk">
+      <SOAP:operation soapAction="" style="rpc" />
+      <WSDL:input>
+        <SOAP:body use="encoded" namespace="http://geneva.advent.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="literal" namespace="http://geneva.advent.com" />
+      </WSDL:output>
+    </WSDL:operation>
+  </WSDL:binding>
+  <WSDL:service name="Service">
+    <documentation>gSOAP 2.6.2 generated service definition</documentation>
+    <WSDL:port name="Service" binding="tns:Service">
+      <SOAP:address location="http://dubbtvm01:4640" />
+    </WSDL:port>
+  </WSDL:service>
+</WSDL:definitions>

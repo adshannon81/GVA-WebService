@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Document ReportRunId="20140604111553.0001989799997983-29866-10.0.0">
+    <Portfolio name="BC_MF_Test1">
+      <Header>
+        <__title xsi:nil="true" />
+        <__title>0052WebPortalShareSplitNAVHistExtract</__title>
+        <__title>BC_MF_Test1</__title>
+        <__title>BC_MF_Test1_Master</__title>
+        <__dateName>Period End Date</__dateName>
+        <__dateName>Knowledge Date</__dateName>
+        <__dateName>Accounting Calendar</__dateName>
+        <__date>2014-05-30T23:59:59</__date>
+        <__date>2014-06-04T11:15:52</__date>
+        <__date xsi:nil="true" />
+      </Header>
+<Data>	
+<CAP_CLS>307</CAP_CLS>
+<CLASS>NAMMCFClA</CLASS>
+<STATUS></STATUS>
+<DATED>41732</DATED>
+<EXP_CLS>339</EXP_CLS>
+<REV_CLS>0</REV_CLS>
+<CAPITAL>2334766482</CAPITAL>
+<REVENUES>1310428</REVENUES>
+<EXPENSES>390787</EXPENSES>
+<NAV_FLD2_RATE>1.000000000000</NAV_FLD2_RATE>
+<REV_PERCNT>0.0005632</REV_PERCNT>
+
+</Data>	
+
+
+    </Portfolio>
+  </Document>
+</NewDataSet>

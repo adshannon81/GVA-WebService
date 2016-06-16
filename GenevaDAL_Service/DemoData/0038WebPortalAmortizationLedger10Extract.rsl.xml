@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Document ReportRunId="20140604111553.0001989799997983-29866-10.0.0">
+    <Portfolio name="BC_MF_Test1">
+      <Header>
+        <__title xsi:nil="true" />
+        <__title>0038WebPortalAmortizationLedger10Extract</__title>
+        <__title>BC_MF_Test1</__title>
+        <__title>BC_MF_Test1_Master</__title>
+        <__dateName>Period End Date</__dateName>
+        <__dateName>Knowledge Date</__dateName>
+        <__dateName>Accounting Calendar</__dateName>
+        <__date>2014-05-30T23:59:59</__date>
+        <__date>2014-06-04T11:15:52</__date>
+        <__date xsi:nil="true" />
+      </Header>
+      <Data>
+		<RCD_ID>N/A</RCD_ID>
+		<ACCT_ID>FSTFS</ACCT_ID>
+		<ACTG_TRN_EV_ID>AMTLED</ACTG_TRN_EV_ID>
+		<ACTG_TRN_ID>110130000</ACTG_TRN_ID>
+		<BK_ID>DAIW</BK_ID>
+		<CNTRCT_PAY_TMS>2013-10-01T00:00:00+01:00</CNTRCT_PAY_TMS>
+		<EFF_POST_TMS>2013-10-01T00:00:00+01:00</EFF_POST_TMS>
+		<EV_CREATED_TMS>2013-10-15T13:30:44+01:00</EV_CREATED_TMS>
+		<INQ_BASIS_NUM>10</INQ_BASIS_NUM>
+		<INSTR_ID>1685231</INSTR_ID>
+		<ISS_ID>9A27940</ISS_ID>
+		<ORG_ID>DAIW</ORG_ID>
+		<QUANTITY>8127.97495</QUANTITY>
+		<TRD_EX_EFF_TMS>2013-10-01T00:00:00+01:00</TRD_EX_EFF_TMS>
+		<TRN_CDE>AMT</TRN_CDE>
+		<TRN_DESC>Opening / Closing Balance</TRN_DESC>
+		<CLS_SET_ID>TRAN1</CLS_SET_ID>
+		<INC_PS_AMT>0</INC_PS_AMT>
+		<INC_PS_ALT_AMT>0</INC_PS_ALT_AMT>
+		<SRC_SYS_ID>GENEVA</SRC_SYS_ID>
+		<FLD7_TXT>FUNDS_1685231</FLD7_TXT>
+		<FLD3_DESC>Amort/Accr Ledger</FLD3_DESC>
+		<FLD7_AMT>889779850</FLD7_AMT>
+		<FLD8_AMT>0</FLD8_AMT>
+		<FLD11_AMT>889779850</FLD11_AMT>
+
+      </Data>
+    </Portfolio>
+  </Document>
+</NewDataSet>

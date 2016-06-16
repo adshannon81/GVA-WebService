@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GenevaDAL_Service", "GenevaDAL_Service", "{7ECE0CE7-F218-4153-A225-69646CDBEA69}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/GenevaDAL_Service"
+		Debug.AspNetCompiler.PhysicalPath = "GenevaDAL_Service\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\GenevaDAL_Service\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/GenevaDAL_Service"
+		Release.AspNetCompiler.PhysicalPath = "GenevaDAL_Service\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\GenevaDAL_Service\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "10544"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://dubbtvm-tfs:8080/tfs/sumidev
+		SccLocalPath0 = .
+		SccWebProject1 = true
+		SccProjectUniqueName1 = GenevaDAL_Service
+		SccProjectName1 = GenevaDAL_Service
+		SccLocalPath1 = GenevaDAL_Service
+		SccProjectEnlistmentChoice1 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7ECE0CE7-F218-4153-A225-69646CDBEA69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ECE0CE7-F218-4153-A225-69646CDBEA69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ECE0CE7-F218-4153-A225-69646CDBEA69}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7ECE0CE7-F218-4153-A225-69646CDBEA69}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7ECE0CE7-F218-4153-A225-69646CDBEA69}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7ECE0CE7-F218-4153-A225-69646CDBEA69}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ECE0CE7-F218-4153-A225-69646CDBEA69}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{7ECE0CE7-F218-4153-A225-69646CDBEA69}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7ECE0CE7-F218-4153-A225-69646CDBEA69}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7ECE0CE7-F218-4153-A225-69646CDBEA69}.Release|x86.ActiveCfg = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

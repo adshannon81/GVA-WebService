@@ -1,0 +1,62 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Document ReportRunId="20140604111553.0001989799997983-29866-10.0.0">
+    <Portfolio name="BC_MF_Test1">
+      <Header>
+        <__title xsi:nil="true" />
+        <__title>0041WebPortalPositions15Extract</__title>
+        <__title>BC_MF_Test1</__title>
+        <__title>BC_MF_Test1_Master</__title>
+        <__dateName>Period End Date</__dateName>
+        <__dateName>Knowledge Date</__dateName>
+        <__dateName>Accounting Calendar</__dateName>
+        <__date>2014-05-30T23:59:59</__date>
+        <__date>2014-06-04T11:15:52</__date>
+        <__date xsi:nil="true" />
+      </Header>
+      <Data>
+		<RCD_ID>Total OAI</RCD_ID>
+		<ACCT_ID>ODEYEUR</ACCT_ID>
+		<ADJST_TMS>2013-07-01T11:41:36+01:00</ADJST_TMS>
+		<ALT_CURR_CDE>EUR</ALT_CURR_CDE>
+		<AS_OF_TMS>2013-06-28T23:59:59+01:00</AS_OF_TMS>
+		<BK_ID>DAIW</BK_ID>
+		<CRVL_CMB_AMT>0</CRVL_CMB_AMT>
+		<CRVL_ALT_CMB_AMT>-73972233.25</CRVL_ALT_CMB_AMT>
+		<EAI_AMT>0</EAI_AMT>
+		<EAI_ALT_AMT>-353340.5</EAI_ALT_AMT>1
+		<FX_ALT_CMB_RTE>0</FX_ALT_CMB_RTE>1
+		<INC_PROJ_CMB_RTE>0</INC_PROJ_CMB_RTE>1
+		<INSTR_ID>BRP</INSTR_ID>
+		<INQ_BASIS_NUM>15</INQ_BASIS_NUM>
+		<ORG_ID>DAIW</ORG_ID>
+		<POS_ID>BRPL15</POS_ID>
+		<QUANTITY>0</QUANTITY>
+		<UT_PRC_CMB_AMT>0</UT_PRC_CMB_AMT>
+		<UGLCUR_ALT_CMB_AMT>424185.7</UGLCUR_ALT_CMB_AMT>
+		<UGL_ALT_CMB_AMT>424185.7</UGL_ALT_CMB_AMT>
+		<UGLINV_ALT_CMB_AMT>0</UGLINV_ALT_CMB_AMT>
+		<FLD1_AMT>1325.026</FLD1_AMT>
+		<FLD3_AMT>-4.09685</FLD3_AMT>
+		<FLD7_AMT>-3.76124</FLD7_AMT>
+		<FLD8_AMT>-5.19335</FLD8_AMT>
+		<FLD9_AMT>-73972233.25</FLD9_AMT>
+		<VALVAL_CMB_AMT>0</VALVAL_CMB_AMT>
+		<VALVAL_ALT_CMB_AMT>-73972233.25 </VALVAL_ALT_CMB_AMT>
+		<FLD1_QTY>0</FLD1_QTY>
+		<FLD2_QTY>0</FLD2_QTY>
+		<DEAL_NME></DEAL_NME>
+		<DIV_ADJ_RTE>-73972233.25</DIV_ADJ_RTE>
+		<RTE_CMB_AMT> </RTE_CMB_AMT>
+    <SPRD_RTE></SPRD_RTE>
+		<FLD15_AMT>0</FLD15_AMT>
+		<FLD16_AMT>-352015</FLD16_AMT>
+		<FLD20_AMT>-73972233.25</FLD20_AMT>
+
+
+
+
+      </Data>
+    </Portfolio>
+  </Document>
+</NewDataSet>

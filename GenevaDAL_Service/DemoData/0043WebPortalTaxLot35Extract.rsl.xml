@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Document ReportRunId="20140604111553.0001989799997983-29866-10.0.0">
+    <Portfolio name="BC_MF_Test1">
+      <Header>
+        <__title xsi:nil="true" />
+        <__title>0043WebPortalTaxLot35Extract</__title>
+        <__title>BC_MF_Test1</__title>
+        <__title>BC_MF_Test1_Master</__title>
+        <__dateName>Period End Date</__dateName>
+        <__dateName>Knowledge Date</__dateName>
+        <__dateName>Accounting Calendar</__dateName>
+        <__date>2014-05-30T23:59:59</__date>
+        <__date>2014-06-04T11:15:52</__date>
+        <__date xsi:nil="true" />
+      </Header>
+      <Data>
+		<RCD_ID>TOT UT</RCD_ID>
+		<ACCT_ID>FSTFS</ACCT_ID>
+		<ADJST_TMS>2013-02-26T16:50:53+00:00</ADJST_TMS>
+		<ALT_CURR_CDE>JPY</ALT_CURR_CDE>
+		<AS_OF_TMS>2013-01-31T23:59:59+00:00</AS_OF_TMS>
+		<BK_ID>DAIW</BK_ID>
+		<COVL_TYP>N/A</COVL_TYP>
+		<INSTR_ID>OU</INSTR_ID>
+		<INQ_BASIS_NUM>35</INQ_BASIS_NUM>
+		<LONG_SHORT_IND>L</LONG_SHORT_IND>
+		<LOT_ID>OUL35</LOT_ID>
+		<NLS_CDE>E</NLS_CDE>
+		<ORG_ID>DAIW</ORG_ID>
+		<PRIN_INC_IND>X</PRIN_INC_IND>
+		<UGLCUR_ALT_CMB_AMT>2232514.87259</UGLCUR_ALT_CMB_AMT>
+		<FLD1_AMT>104103164.87259</FLD1_AMT>
+		<VALVAL_ALT_CMB_AMT>101870650</VALVAL_ALT_CMB_AMT>
+		<DEAL_NME></DEAL_NME>
+
+
+
+
+      </Data>
+    </Portfolio>
+  </Document>
+</NewDataSet>
